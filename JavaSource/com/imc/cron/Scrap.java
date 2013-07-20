@@ -71,6 +71,7 @@ public class Scrap {
 	
 	public Scrap(){
 	}
+	
 	public void scrapHtmlPage(String url) throws Exception{
 		
 		HttpClient httpClient = new DefaultHttpClient();
