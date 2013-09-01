@@ -1,4 +1,4 @@
-
+<%@include file="/taglib/taglib.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -38,30 +38,14 @@
 
 <header>
 	<h1 id="logo">
-		<a href="'${pageContext.request.contextPath}'/home.action"><img
-			src="http://www.webiz.mu/themes/opencart/megastore/image/data/logo.jpg"
-			title="MegaStore" alt="MegaStore" /></a>
+		<s:url value="%{#request.contextPath}/home.action" var="homelink"></s:url>
+		<s:a href="%{homelink}">
+			
+			<img src="${pageContext.request.contextPath}/images/logo.jpg" title="MegaStore" alt="MegaStore" />
+		</s:a>
+		
+		
 	</h1>
-	<div class="hshare">
-		<span>Share:</span>
-		<div class="fb-like"
-			data-href="http://www.webiz.mu/themes/opencart/megastore"
-			data-layout="button_count" data-width="350" data-show-faces="false"
-			data-font="lucida grande"></div>
 
-		<a href="https://twitter.com/share" class="twitter-share-button"
-			data-url="http://www.webiz.mu/themes/opencart/megastore"
-			data-dnt="true">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-		<div class="pin-it-button">
-			<a
-				href="http://pinterest.com/pin/create/button/?url=http://www.webiz.mu/themes/opencart/megastore&media=http://www.webiz.mu/themes/opencart/megastore/image/data/logo.jpg&description=My Store"
-				class="pin-it-button" count-layout="horizontal"><img border="0"
-				src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
-		</div>
-		<div class="clear"></div>
-	</div>
-	
 	<div class="clear"></div>
 </header>

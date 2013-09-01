@@ -192,7 +192,7 @@
 		<h2 id="review-title">Write a review</h2>
     <div class="review-form">
     <form  id="formtheme2" method="post" action='${pageContext.request.contextPath}/addReviews'>
-    	<s:hidden name="id" value ="%{id}"></s:hidden>
+    	<s:hidden name="id" value ="%{#attr.id}"></s:hidden>
 				<b>Your Name:</b>
 				<br>
 				<input type="text" name="name" value="" data-bvalidator="alpha,minlength[10],required">

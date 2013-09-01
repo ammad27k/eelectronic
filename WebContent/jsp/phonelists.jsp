@@ -9,17 +9,7 @@
 				Example of category description text
 			</p>
       </div>
-      <div class="refine-search">
-  <h2>Refine Search</h2>
-  <div class="category-list">
-        <ul>
-            <li><a href="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20_26">PC</a></li>
-            <li><a href="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20_27">Mac</a></li>
-          </ul>
-      </div>
-  </div>
-  
-
+    
 	
       <div class="product-filter">
     <div class="display"><b>Display:</b> List <b>/</b> <a onclick="display('grid');">Grid</a></div>
@@ -42,17 +32,14 @@
                       </select>
     </div>
     <div class="sort"><b>Sort By:</b>
-      <select onchange="location = this.value;">
-                        <option selected="selected" value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=p.sort_order&amp;order=ASC">Default</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=pd.name&amp;order=ASC">Name (A - Z)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=pd.name&amp;order=DESC">Name (Z - A)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=p.price&amp;order=ASC">Price (Low &gt; High)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=p.price&amp;order=DESC">Price (High &gt; Low)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=rating&amp;order=DESC">Rating (Highest)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=rating&amp;order=ASC">Rating (Lowest)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=p.model&amp;order=ASC">Model (A - Z)</option>
-                                <option value="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/category&amp;path=20&amp;sort=p.model&amp;order=DESC">Model (Z - A)</option>
-                      </select>
+    
+    
+      <s:select 
+			headerKey="-1" headerValue="Please Select"
+			list="#{'1':'Name', '2':'Price'}" 
+			name="sortvalue" 
+			value="1" />
+	
     </div>
     <!-- <div class="product-compare" ><a id="compare-total" href="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/compare">Product Compare (0)</a></div> -->
   </div>
