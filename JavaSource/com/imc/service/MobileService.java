@@ -46,7 +46,7 @@ public class MobileService {
 	public static List<MobileAlertTypes> getMobileAlertType(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			
 			List<MobileAlertTypes> mobileAlertType = multipleFeature.getMobileAlertTypes(phone, session,phoneId);	
 			
@@ -60,8 +60,8 @@ public class MobileService {
 	public static List<MobileBrowsers> getMobileBrowsers(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileBrowsers> mobileBrowsers = multipleFeature.getMobileBrowsers(phone, session,phoneId);
 			return mobileBrowsers;
 		}catch(Exception e){
@@ -72,8 +72,8 @@ public class MobileService {
 	public static List<MobileCameraFeatures> getMobileCameraFeatures(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileCameraFeatures> mobileBrowsers = multipleFeature.getCameraFeatures(phone, session,phoneId);
 			return mobileBrowsers;
 		}catch(Exception e){
@@ -84,8 +84,8 @@ public class MobileService {
 	public static List<MobileCameraPrimary> getCameraPrimaries(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileCameraPrimary> mobileCameraPrimaries = multipleFeature.getCameraPrimaries(phone, session,phoneId);
 			return mobileCameraPrimaries;
 		}catch(Exception e){
@@ -95,8 +95,8 @@ public class MobileService {
 	public static List<MobileCameraSecondary> getCameraSecondaries(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileCameraSecondary> mobileCameraSecondaries = multipleFeature.getCameraSecondaries(phone, session, phoneId);
 			return mobileCameraSecondaries;
 		}catch(Exception e){
@@ -106,8 +106,8 @@ public class MobileService {
 	public static List<MobileCameraVideo> getCameraVideos(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileCameraVideo> mobileCameraVideos = multipleFeature.getCameraVideos(phone, session, phoneId);
 			return mobileCameraVideos;
 		}catch(Exception e){
@@ -117,8 +117,8 @@ public class MobileService {
 	public static List<MobileColors> getMobileColors(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileColors> mobileColors = multipleFeature.getMobileColors(phone, session, phoneId);
 			return mobileColors;
 		}catch(Exception e){
@@ -128,8 +128,8 @@ public class MobileService {
 	public static List<MobileDataSpeeds> getMobileDataSpeeds(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileDataSpeeds> mobileDataSpeeds = multipleFeature.getMobileDataSpeeds(phone, session, phoneId);
 			return mobileDataSpeeds;
 		}catch(Exception e){
@@ -139,8 +139,8 @@ public class MobileService {
 	public static List<MobileDisplayTypes> getDisplayTypes(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileDisplayTypes> mobileDisplayTypes = multipleFeature.getDisplayTypes(phone, session, phoneId);
 			return mobileDisplayTypes;
 		}catch(Exception e){
@@ -150,8 +150,8 @@ public class MobileService {
 	public static List<MobileFeatures> getMobileFeatures(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileFeatures> mobileFeatures = multipleFeature.getMobileFeatures(phone, session, phoneId);
 			return mobileFeatures;
 		}catch(Exception e){
@@ -161,8 +161,8 @@ public class MobileService {
 	public static List<MobileGames> getMobileGames(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileGames> mobileGames = multipleFeature.getMobileGames(phone, session, phoneId);
 			return mobileGames;
 		}catch(Exception e){
@@ -172,8 +172,8 @@ public class MobileService {
 	public static List<MobileJava> getMobileJavas(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//session.beginTransaction();
 			List<MobileJava> mobileJavas = multipleFeature.getMobileJavas(phone, session, phoneId);
 			return mobileJavas;
 		}catch(Exception e){
@@ -183,8 +183,8 @@ public class MobileService {
 	public static List<MobileMemory> getMobileMemories(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//session.beginTransaction();
 			List<MobileMemory> mobileMemories = multipleFeature.getMobileMemories(phone, session, phoneId);
 			return mobileMemories;
 		}catch(Exception e){
@@ -194,8 +194,8 @@ public class MobileService {
 	public static List<MobileMemoryCardslots> getMobileMemoryCardslots(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileMemoryCardslots> mobileMemoryCardslots = multipleFeature.getMobileMemoryCardslots(phone, session, phoneId);
 			return mobileMemoryCardslots;
 		}catch(Exception e){
@@ -205,8 +205,8 @@ public class MobileService {
 	public static List<MobileMessaging> getMobileMessagings(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileMessaging> mobileMessagings = multipleFeature.getMobileMessagings(phone, session, phoneId);
 			return mobileMessagings;
 		}catch(Exception e){
@@ -216,8 +216,8 @@ public class MobileService {
 	public static List<MobileNetworks> getMobileNetworks(MobilePhones phone,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileNetworks> mobileNetworks = multipleFeature.getMobileNetworks(phone, session, phoneId);
 			return mobileNetworks;
 		}catch(Exception e){
@@ -227,8 +227,8 @@ public class MobileService {
 	public static List<MobileNfc> getMobileNfcs(MobilePhones phones,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileNfc> mobileNfcs = multipleFeature.getMobileNfcs(phones, session, phoneId);
 			return mobileNfcs;
 		}catch(Exception e){
@@ -238,8 +238,8 @@ public class MobileService {
 	public static List<MobileDisplayProtection> getDisplayProtections(MobilePhones phones,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//session.beginTransaction();
 			List<MobileDisplayProtection> mobileDisplayProtections = multipleFeature.getDisplayProtections(phones, session, phoneId);
 			return mobileDisplayProtections;
 		}catch(Exception e){
@@ -249,8 +249,8 @@ public class MobileService {
 	public static List<MobileRadio> getMobileRadios(MobilePhones phones,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//session.beginTransaction();
 			List<MobileRadio> mobileRadios = multipleFeature.getMobileRadios(phones, session, phoneId);
 			return mobileRadios;
 		}catch(Exception e){
@@ -260,8 +260,8 @@ public class MobileService {
 	public static List<MobileSensors> getMobileSensors(MobilePhones phones,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//	session.beginTransaction();
 			List<MobileSensors> mobileSensors = multipleFeature.getMobileSensors(phones, session, phoneId);
 			return mobileSensors;
 		}catch(Exception e){
@@ -271,8 +271,8 @@ public class MobileService {
 	public static List<MobileSoundFeatures> getMobileSoundFeatures(MobilePhones phones,long phoneId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			session.beginTransaction();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			//session.beginTransaction();
 			List<MobileSoundFeatures> mobileSoundFeatures = multipleFeature.getMobileSoundFeatures(phones, session, phoneId);
 			return mobileSoundFeatures;
 		}catch(Exception e){
@@ -283,7 +283,7 @@ public class MobileService {
 	public static int persisteMobilePhones(MobilePhones phones) throws Exception{
 		try{
 			PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			
 			int result = persistenceDao.persistMobilePhone(phones, session);
 			return result;
@@ -294,7 +294,7 @@ public class MobileService {
 	public static Object getId(Class<?> clss,String value) throws Exception{
 		try{
 			PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			
 			return  persistenceDao.getId(clss, session, value);
 			
@@ -305,7 +305,7 @@ public class MobileService {
 	public static Object getIdByNameValue(Class<?> clss,String name , Object value ,boolean id) throws Exception{
 		try{
 			PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return persistenceDao.getIdByNameValue(clss, session, name, value,id);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -316,7 +316,7 @@ public class MobileService {
 	public static Object getMobilePhoneId(Class<?> clss,String name , Object value ,boolean id) throws Exception{
 		try{
 			PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return persistenceDao.getIdByNameValue(clss, session, name, value,id);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -326,15 +326,15 @@ public class MobileService {
 	}
 	public static void persistObject(String tablename,Object object) throws Exception{
 		PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		persistenceDao.persistObject(tablename, object, session);
 		
 	}
 	
 	public static void persistObject(MobilePhoneReviews object) throws Exception{
 		PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+	//	session.beginTransaction();
 		persistenceDao.persistReviews(object, session);
 		session.getTransaction().commit();
 		
@@ -344,7 +344,7 @@ public class MobileService {
 	public static void deleteObject(String tableName,String name,String value) throws Exception{
 		try{
 			PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			persistenceDao.deleteObject(session, tableName, name, value);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -353,7 +353,7 @@ public class MobileService {
 	public static List<MobileBrands> getAllMobileBrands() throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return multipleFeature.getMobileAllBrands(null, session);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -363,7 +363,7 @@ public class MobileService {
 	public static List<MobilePhones> getAllMobilePhonesByBrands(MobilePhones phones,long brandId,int limit) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return multipleFeature.getAllMobilePhoneByBrands(phones, session, brandId,limit);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -374,7 +374,7 @@ public class MobileService {
 	public static BigInteger getMobilePhonesCount(MobilePhones phones ,long brandId,int limit) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return multipleFeature.getMobilePhonesCount(phones, session, brandId, limit);
 		}catch(Exception e){
 			throw new Exception(e);
@@ -385,7 +385,7 @@ public class MobileService {
 	public static List<MobilePhones> getAllMobilePhonesByBrandsForPagination(MobilePhones phones,long brandId,int limit,int start,int end) throws Exception{
 		try{
 			
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			return session.createCriteria(MobilePhones.class).add(Restrictions.eq("brandId", brandId)).setFirstResult(start).setMaxResults(limit).list();
 		//	return session.createSQLQuery("select * from mobile_phones where brand_id = " + brandId + " limit " + limit + " offset " + start).addEntity(MobilePhones.class).list();
 		}catch(Exception e){
@@ -396,7 +396,7 @@ public class MobileService {
 	
 	public static List<MobilePhoneReviews> getMobilePhoneReviews(MobilePhones phones,long id) throws Exception{
 		try{
-			Session session = HibernateUtil.getSessionFactory().openSession();
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
 			return multipleFeature.getMobilePhoneReviews(phones, session, id);
 			

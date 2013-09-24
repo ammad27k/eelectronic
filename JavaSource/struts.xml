@@ -14,10 +14,12 @@
 		<result-types>
             <result-type default="true" name="tiles-result" class="com.imc.tileshelper.TilesResult"/>
         </result-types>
+     
         
         <interceptors>
-        
+        	<interceptor name="hibernateSessionRequest" class="com.imc.framework.interceptors.HibernateSessionRequestFilter"/>
         	 <interceptor-stack name="defaultStack">
+        	 	<interceptor-ref name="hibernateSessionRequest"/>
                 <interceptor-ref name="exception"/>
                 <interceptor-ref name="alias"/>
                 <interceptor-ref name="servletConfig"/>
@@ -71,8 +73,9 @@
 	<package name="ajax-package" extends="struts-default" namespace="/">
 	
 	<interceptors>
-        
+        <interceptor name="hibernateSessionRequest" class="com.imc.framework.interceptors.HibernateSessionRequestFilter"/>
         	 <interceptor-stack name="defaultStack">
+        	 <interceptor-ref name="hibernateSessionRequest"/>
                 <interceptor-ref name="exception"/>
                 <interceptor-ref name="alias"/>
                 <interceptor-ref name="servletConfig"/>

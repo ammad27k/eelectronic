@@ -67,6 +67,7 @@ public class HibernateSessionRequestFilter implements Filter {
 	    public void init(FilterConfig filterConfig) throws ServletException {
 	        log.debug("Initializing filter...");
 	        log.debug("Obtaining SessionFactory from static HibernateUtil singleton");
+	        
 	        sf = HibernateUtil.getSessionFactory();
 	    }
 	@Override

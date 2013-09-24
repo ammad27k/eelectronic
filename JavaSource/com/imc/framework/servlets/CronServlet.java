@@ -33,9 +33,9 @@ public class CronServlet extends HttpServlet {
 		Scrap scrap = new Scrap();
 		try{
 			String url = "http://www.gsmarena.com/sony_ericsson_xperia_neo_v-";
-			int start = 3000;
+			int start = 2000;
 			
-			int limit =10;
+			int limit =4000;
 			
 			boolean brands = false;
 			for(int i = start ;i< start + limit ; i++) {
@@ -54,6 +54,7 @@ public class CronServlet extends HttpServlet {
 			
 			
 		}catch (Exception e) {
+			HibernateUtil.getSessionFactory().getCurrentSession().getTransaction().commit();
 			System.out.print(e);
 		}
 	}
