@@ -2,7 +2,7 @@
 SQLyog Ultimate v8.71 
 MySQL - 5.5.8-log : Database - mobilephones
 *********************************************************************
-*/
+*/
 
 /*!40101 SET NAMES utf8 */;
 
