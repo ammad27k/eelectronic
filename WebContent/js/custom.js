@@ -76,7 +76,16 @@ $(function(){
 			$('input#select-cat').attr('value','');	
 		}
 		$('.selected-cat').empty().append(cat_name);
-		$('.selectCat ul').hide();		
+                $('.selectCat ul').hide();
+                var url = $('#select-cat-url').val();
+                $('.product').block({ message: null });
+                $.post(url+"/phonesByAjax/motorola-phones-3",function(data,status){
+                    
+                    $('.product').html(data);
+                    $('.product').unblock();
+                });
+				
+                                
 	});
 	
 /*	

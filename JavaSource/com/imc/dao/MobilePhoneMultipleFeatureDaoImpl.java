@@ -61,7 +61,7 @@ public class MobilePhoneMultipleFeatureDaoImpl implements MobilePhoneMultipleFea
 	}
 
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public List<MobileBrowsers> getMobileBrowsers(MobilePhones phone,Session session, long phoneId) throws Exception {
 		try{
@@ -81,7 +81,7 @@ public class MobilePhoneMultipleFeatureDaoImpl implements MobilePhoneMultipleFea
 	}
 
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public List<MobileCameraFeatures> getCameraFeatures(MobilePhones phone,Session session, long phoneId) throws Exception {
 		try{
@@ -98,7 +98,7 @@ public class MobilePhoneMultipleFeatureDaoImpl implements MobilePhoneMultipleFea
 			throw new Exception(ex);
 		}
 	}
-	@SuppressWarnings("unchecked")
+
 	@Override
 	public List<MobileCameraPrimary> getCameraPrimaries(MobilePhones phone,Session session, long phoneId) throws Exception {
 		try{
@@ -116,7 +116,7 @@ public class MobilePhoneMultipleFeatureDaoImpl implements MobilePhoneMultipleFea
 		}
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public List<MobileCameraSecondary> getCameraSecondaries(MobilePhones phone,Session session, long phoneId) throws Exception {
 		try{
@@ -440,10 +440,11 @@ public class MobilePhoneMultipleFeatureDaoImpl implements MobilePhoneMultipleFea
 	
 	@SuppressWarnings("unchecked")
 	
-	public List<MobileBrands> getMobileAllBrands(MobileBrands brands,Session session) throws Exception {
+	public List<MobileBrands> getMobileAllBrands(MobileBrands brands,String catId,Session session) throws Exception {
 		try{
-			return session.createCriteria(MobileBrands.class).list();
-			
+			//return session.createCriteria(MobileBrands.class).add(Restrictions.eq("", catId)).list();
+			return session.createSQLQuery("SELECT mb.id , mb.title , mb.slug , mb.is_active , mb.is_deleted , mb.cat_id, cat.id , cat.title, cat.parent_id , cat.slug ,cat.is_active , cat.is_deleted FROM mobilephones.mobile_brands mb LEFT OUTER JOIN categories cat ON mb.cat_id=cat.id\n" +
+                                                " where mb.cat_id = '" + catId+"'").addEntity(MobileBrands.class).list();
 		}catch(Exception ex){
 			LGR.info("#DAOException# some error occured while getting mobile networks");
 			throw new Exception(ex);

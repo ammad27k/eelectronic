@@ -26,15 +26,14 @@ public abstract class BaseAction extends ActionSupport implements Preparable,Ser
 	private  List<MobileBrands> brandList = new ArrayList<>();
 	
 	
-	public void prepareBrands() throws Exception {
-		if(sessionMap.get("sidebarMenu") == null){
-			List<MobileBrands> list = MobileService.getAllMobileBrands();
-			for(MobileBrands brands : list){
-				HelperService.setStringWithFirstLetterUpperCase(brands);
-				brandList.add(brands);
-			}
-			this.sessionMap.put("sidebarMenu", brandList);
+	public void prepareCategories(String catId) throws Exception {
+		List<MobileBrands> list = MobileService.getAllMobileBrands(catId);
+		for(MobileBrands brands : list){
+			HelperService.setStringWithFirstLetterUpperCase(brands);
+                        System.out.println(brands.getCategories().getId());
+			brandList.add(brands);
 		}
+		this.sessionMap.put("sidebarMenu", brandList);
 		
 	}
 	

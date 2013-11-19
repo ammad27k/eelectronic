@@ -6,14 +6,15 @@
  <struts>
  	<constant name="devMode" value="false"/>
  	<constant name="struts.custom.i18n.resources" value="resources/global" />
- 	<constant name="struts.enable.SlashesInActionNames" value="true"></constant>
+ 	<constant name="struts.enable.SlashesInActionNames" value="true" />
  	<constant name="struts.patternMatcher" value="namedVariable"/>
+        <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
  	
  	
 	 <package name="non-ajax-package" extends="struts-default" namespace="/">
 		<result-types>
-            <result-type default="true" name="tiles-result" class="com.imc.tileshelper.TilesResult"/>
-        </result-types>
+                    <result-type default="true" name="tiles-result" class="com.imc.tileshelper.TilesResult"/>
+                </result-types>
      
         
         <interceptors>
@@ -58,13 +59,11 @@
 		</action>
 		
 		<action name="phones/{fancyurl}" class="com.imc.framework.action.HomeAction" method="phones">
-			<!-- <param name="param1">{1}</param> -->
 			<result name="success" type="tiles-result">phoneslist</result>
 		</action>
 		
 		<action name="phonedetail/{fancyurl}" class ="com.imc.framework.action.PhoneDetailAction" method = "fetchPhoneDetail">
-			<!-- <param name="param1">{1}</param> -->
-			<result name="success" type="tiles-result">phonesdetail</result>
+                        <result name="success" type="tiles-result">phonesdetail</result>
 		</action>
 		
 			

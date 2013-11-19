@@ -4,21 +4,15 @@
 		<input id="search-input" type="text" name="filter_name" value="Search the site..." />
 		<div class="selectCat">
 			<span class="selected-cat">All Categories</span>
-			
-				<ul class="cat-list">
-					<li><span> All Categories </span>
-					<li class="20">Desktops</li>
-					<li class="18">Notebooks</li>
-					<li class="25">Components</li>
-					<li class="57">Tablets</li>
-					<li class="17">Software</li>
-					<li class="24">Phones &amp; PDAs</li>
-					<li class="33">Cameras</li>
-					<li class="34">MP3 Players</li>
-				</ul>
+                        	<ul class="cat-list">
+					<s:iterator value='@com.imc.service.MobileService@getAllCategories()' var="categories">
+                                            <li class=<s:property  value = "%{#categories.id}"/> > <s:property  value = "%{#categories.title}"/></li>   
+                                        </s:iterator>   
+                                </ul>
 				
 		
 			<input id="select-cat" type="hidden" name="filter_category_id" value="" />
+                        <input id="select-cat-url" type="hidden" name="filter_category_url" value='${pageContext.request.contextPath}' />
 		</div>
 	</div>
 	<a id="button" onclick="searchPhones('${pageContext.request.contextPath}/searchPhonesByAjax')">Search</a>

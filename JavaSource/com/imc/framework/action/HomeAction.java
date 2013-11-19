@@ -26,12 +26,15 @@ public class HomeAction extends BaseAction {
 	private int noOfPages;
 	private int start;
 	private int end;
-	 
+        private String catId;
+
+     
 	
 	
 
 	public String welcomeHome() throws Exception{
-		prepareBrands();
+                
+		prepareCategories((catId == null || catId.equals("")) ? "1" : catId);
 		return SUCCESS;
 	}
 	
@@ -72,7 +75,7 @@ public class HomeAction extends BaseAction {
 	}
 	
 	public String phones() throws Exception{
-		prepareBrands();
+		prepareCategories((catId == null || catId.equals("")) ? "1" : catId);
 		getPhonesByBrandId(getFancyurl(),null);
 		return SUCCESS;
 	}
@@ -153,6 +156,15 @@ public class HomeAction extends BaseAction {
 	public void setEnd(int end) {
 		this.end = end;
 	}
+        
+        public String getCatId() {
+         return catId;
+        }
+
+        public void setCatId(String catId) {
+            this.catId = catId;
+        }
+	
 
 	@Override
 	public void prepare() throws Exception {}

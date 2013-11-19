@@ -334,7 +334,7 @@ a.button:hover, input.button:hover {background-position:bottom;text-shadow: 1px 
 
 /* product */
 .product-list,.noprod{background:#fff;border:1px solid #e6e6e6;border-top:0;padding:15px;}
-.product-list li {   height: 130px \0/; }
+.product-list li {   height: 130px 0; }
 .product-list > li {margin-bottom: 15px;overflow:auto;}
 .product-list .right {float: right;margin-left: 15px;}
 .product-list > li + li {border-top: 1px solid #e6e6e6;padding-top: 16px;}

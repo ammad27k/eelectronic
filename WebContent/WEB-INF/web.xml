@@ -20,15 +20,15 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
  
- <!--  <filter>
+<!--  <filter>
     <filter-name>HibernateFilter</filter-name>
     <filter-class>com.imc.framework.filters.HibernateSessionRequestFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>HibernateFilter</filter-name>
     <url-pattern>/*</url-pattern>
-  </filter-mapping>  -->
-  
+  </filter-mapping> 
+  -->
    <servlet>
     <description></description>
     <display-name>StartUp</display-name>
@@ -36,7 +36,7 @@
     <servlet-class>com.imc.framework.servlets.StartUp</servlet-class>
     <init-param>
     	<param-name>contextPath</param-name>
-    	<param-value>H:\Java Web\workspace\MobilScop\WebContent\</param-value>
+    	<param-value>H:\NetBeanWorkspace\trunk\WebContent\</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>

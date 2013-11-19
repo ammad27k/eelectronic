@@ -20,7 +20,7 @@ public class PersistenceDaoImpl implements PersistenceDao{
 		}
 		
 	}
-	
+	@Override
 	public Object getId(Class<?> cls,Session session,String value) throws Exception{
 		try{
 			return session.createCriteria(cls).add(Restrictions.eq("title", value)).uniqueResult();
@@ -29,7 +29,7 @@ public class PersistenceDaoImpl implements PersistenceDao{
 			throw new Exception(e);
 		}
 	}
-	
+	@Override
 	public Object getIdByNameValue(Class<?> cls ,Session session, String name, Object value,boolean id) throws Exception{
 		try {
 			if(id){

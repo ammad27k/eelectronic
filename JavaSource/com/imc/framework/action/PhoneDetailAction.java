@@ -29,10 +29,11 @@ public class PhoneDetailAction extends BaseAction{
 	private List<MobileDisplayTypes> mobileDisplayType ;
 	
 	private long id;
+         private String catId;
 	
 	private void prepareFetchPhoneDetail(String fancyUrl){
 		try {
-			prepareBrands();
+                        prepareCategories((catId == null || catId.equals("")) ? "1" : catId);
 			
 			String arg[] = fancyUrl.split("-");
 			MobilePhones phones = (MobilePhones) MobileService.getMobilePhoneId(MobilePhones.class, "gsmarenaId", Long.parseLong(arg[arg.length-1]), false);
@@ -110,7 +111,13 @@ public class PhoneDetailAction extends BaseAction{
 		this.mobileDisplayType = mobileDisplayType;
 	}
 
-	
+	 public String getCatId() {
+         return catId;
+        }
+
+        public void setCatId(String catId) {
+            this.catId = catId;
+        }
 
 	
 }

@@ -15,16 +15,28 @@ public class MobileBrands implements java.io.Serializable {
 	private String slug;
 	private Character isActive;
 	private Character isDeleted;
+        
+        private Categories categories;
+
+        public Categories getCategories() {
+            return categories;
+        }
+
+        public void setCategories(Categories categories) {
+            this.categories = categories;
+        }
 
 	public MobileBrands() {
 	}
 
 	public MobileBrands(String title, String slug, Character isActive,
-			Character isDeleted) {
+			Character isDeleted,Categories categories) {
 		this.title = title;
 		this.slug = slug;
 		this.isActive = isActive;
 		this.isDeleted = isDeleted;
+                this.categories = categories;
+                      
 	}
 
 	public Long getId() {

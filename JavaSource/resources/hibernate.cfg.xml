@@ -15,7 +15,7 @@
         <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
        	<property name="show_sql">true</property>
 
-     	<mapping resource="com/imc/hbm/CmsPages.hbm.xml" />
+     	
         <mapping resource="com/imc/hbm/MobileUsb.hbm.xml" />
         <mapping resource="com/imc/hbm/MobileGprs.hbm.xml" />
         <mapping resource="com/imc/hbm/MobileEdge.hbm.xml" />

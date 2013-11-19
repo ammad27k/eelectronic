@@ -1,5 +1,7 @@
 package com.imc.service;
 
+import com.imc.dao.CategoriesDao;
+import com.imc.dao.CategoriesDaoImpl;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import org.hibernate.criterion.Restrictions;
 
 import com.imc.dao.MobilePhoneMultipleFeatureDao;
 import com.imc.dao.PersistenceDao;
+import com.imc.framework.bean.Categories;
 import com.imc.framework.bean.MobileAlertTypes;
 import com.imc.framework.bean.MobileBrands;
 import com.imc.framework.bean.MobileBrowsers;
@@ -37,7 +40,7 @@ import com.imc.framework.factory.DAOFactory;
 import com.imc.utils.HibernateUtil;
 
 public class MobileService {
-	Logger LGR = Logger.getLogger(MobileService.class);
+	private static Logger LGR = Logger.getLogger(MobileService.class);
 	
 	public MobileService() {
 		
@@ -350,11 +353,11 @@ public class MobileService {
 			throw new Exception(e);
 		}
 	}
-	public static List<MobileBrands> getAllMobileBrands() throws Exception{
+	public static List<MobileBrands> getAllMobileBrands(String catId) throws Exception{
 		try{
 			MobilePhoneMultipleFeatureDao multipleFeature = DAOFactory.getInstance().getMultipleFeatureDao();
 			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-			return multipleFeature.getMobileAllBrands(null, session);
+                        return multipleFeature.getMobileAllBrands(null,catId, session);
 		}catch(Exception e){
 			throw new Exception(e);
 		}
@@ -404,6 +407,20 @@ public class MobileService {
 			throw new Exception(e);
 		}
 	}
+        
+        
+        public static List<Categories> getAllCategories(){
+                try{
+                    Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+                    CategoriesDao categoriesDao = new CategoriesDaoImpl();
+                    
+                    return categoriesDao.getAllCategories(session);
+                }catch(Exception e){
+                    LGR.error("some error occured while getting all categories",e);
+                }
+            return null;
+                      
+        }
 	
 	
 }

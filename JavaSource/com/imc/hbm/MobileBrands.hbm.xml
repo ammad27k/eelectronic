@@ -20,5 +20,10 @@
         <property name="isDeleted" type="java.lang.Character">
             <column name="is_deleted" length="1" />
         </property>
+        
+   
+        <many-to-one name="categories" class="com.imc.framework.bean.Categories" cascade="all" fetch="join">
+            <column name="cat_id" />
+        </many-to-one>
     </class>
 </hibernate-mapping>

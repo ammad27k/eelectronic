@@ -73,7 +73,7 @@ public interface MobilePhoneMultipleFeatureDao{
 	
 	public  List<MobileSoundFeatures> getMobileSoundFeatures(MobilePhones phone,Session session,long phoneId) throws Exception;
 	
-	public List<MobileBrands> getMobileAllBrands(MobileBrands brands,Session session) throws Exception;
+	public List<MobileBrands> getMobileAllBrands(MobileBrands brands,String catId,Session session) throws Exception;
 	
 	public List<MobilePhones> getAllMobilePhoneByBrands(MobilePhones phones ,Session session, long brandId,int limit) throws Exception;
 	

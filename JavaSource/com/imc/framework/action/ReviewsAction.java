@@ -16,13 +16,14 @@ public class ReviewsAction extends BaseAction {
 	private String name;
 	private long id;
 	private String comments;
-	
+	 private String catId;
+         
 	public void validateAddReviews(){
 		
 	}
 	public String addReviews(){
 		try{
-			prepareBrands();
+			prepareCategories((catId == null || catId.equals("")) ? "1" : catId);
 			
 			MobilePhoneReviews reviews = new MobilePhoneReviews();
 			MobilePhones phone = new MobilePhones();
@@ -64,6 +65,13 @@ public class ReviewsAction extends BaseAction {
 	@Override
 	public void prepare() throws Exception {	
 	}
+        
+        public String getCatId() {
+         return catId;
+        }
 
+        public void setCatId(String catId) {
+            this.catId = catId;
+        }
 	
 }

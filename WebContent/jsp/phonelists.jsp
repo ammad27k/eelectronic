@@ -23,7 +23,7 @@
 	</div>
 	
     <div class="limit"><b>Show:</b>
-      <select onchange="getMobilePhoneById('${pageContext.request.contextPath}/phonesByAjax/<s:property value='#attr.fancyurl'/>',this.value)" id="slimit">
+      <select onchange="getMobilePhoneById('${pageContext.request.contextPath}/phonesByAjax/<s:property value='%{fancyurl}'/>',this.value)" id="slimit">
                         <option selected="selected" value="5">5</option>
                                 <option value="10">10</option>
                                 <option value="20">20</option>
@@ -32,16 +32,14 @@
                       </select>
     </div>
     <div class="sort"><b>Sort By:</b>
-    
-    
-      <s:select 
-			headerKey="-1" headerValue="Please Select"
-			list="#{'1':'Name', '2':'Price'}" 
-			name="sortvalue" 
-			value="1" />
-	
+        <s:select 
+            headerKey="-1" headerValue="Please Select"
+            list="#{'1':'Name', '2':'Price'}" 
+            name="sortvalue" 
+            value="1"
+        />
+        
     </div>
-    <!-- <div class="product-compare" ><a id="compare-total" href="http://www.webiz.mu/themes/opencart/megastore/index.php?route=product/compare">Product Compare (0)</a></div> -->
   </div>
   	<div class='product'>
 		<jsp:include page="product.jsp"></jsp:include>
@@ -52,7 +50,7 @@
  
  var jpag ;
 function display(view) {
-	if (view == 'list') {
+	if (view === 'list') {
 		$('.product-grid').attr('class', 'product-list');
 		
 		$('.product-list > li').each(function(index, element) {
@@ -63,13 +61,13 @@ function display(view) {
 			
 			var image = $(element).find('.image').html();
 			
-			if (image != null) { 
+			if (image !== null) { 
 				html += '<div class="image">' + image + '</div>';
 			}
 			
 			var price = $(element).find('.price').html();
 			
-			if (price != null) {
+			if (price !== null) {
 				html += '<div class="price">' + price  + '</div>';
 			}
 					
@@ -78,7 +76,7 @@ function display(view) {
 			
 			var rating = $(element).find('.rating').html();
 			
-			if (rating != null) {
+			if (rating !== null) {
 				html += '<div class="rating">' + rating + '</div>';
 			}
 				
@@ -98,7 +96,7 @@ function display(view) {
 			
 			var image = $(element).find('.image').html();
 			
-			if (image != null) {
+			if (image !== null) {
 				html += '<div class="image">' + image + '</div>';
 			}
 			
@@ -107,13 +105,13 @@ function display(view) {
 			
 			var price = $(element).find('.price').html();
 			
-			if (price != null) {
+			if (price !== null) {
 				html += '<div class="price">' + price  + '</div>';
 			}
 			
 			var rating = $(element).find('.rating').html();
 			
-			if (rating != null) {
+			if (rating !== null) {
 				html += '<div class="rating">' + rating + '</div>';
 			}
 			
@@ -181,7 +179,7 @@ function getMobilePhoneById(url,limit) {
 			$('.product').html(data);
 			$("#slimit option[value=" + limit +"]").attr("selected","selected") ;
 			
-			pages = '<s:property value="noOfPages" escape="false"/>';
+			pages = '<s:property value="%{noOfPages}" escape="true"/>';
 			noOfPages = pages/ $('#slimit option:selected').val();
 			
 			view = $.cookie('display');
@@ -195,5 +193,6 @@ function getMobilePhoneById(url,limit) {
 			
 		});
 }
+
 
 </script>      

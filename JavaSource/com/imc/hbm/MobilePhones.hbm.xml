@@ -13,6 +13,7 @@
         </many-to-one>
       	<many-to-one name="mobileGps" class="com.imc.framework.bean.MobileGps" fetch="join" cascade="all">
             <column name="gps_id" />
+            
         </many-to-one>
         <many-to-one name="mobileChipsets" class="com.imc.framework.bean.MobileChipsets" fetch="join" cascade="all" >
             <column name="chipset_id" />
