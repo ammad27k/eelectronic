@@ -58,8 +58,8 @@ public class PersistenceDaoImpl implements PersistenceDao{
 		try{
 			int i = session.createSQLQuery("insert into mobile_phones_reviews (phone_id,name,reviews_desc) values ('" + obj.getMobilePhones().getId()+"',"+
 					"'"+obj.getName()+"','"+obj.getReviewsDesc() + "')" ).addEntity(MobilePhoneReviews.class).executeUpdate();
+		
 			return i;
-			
 		}catch(Exception e){
 			throw new Exception(e);
 		}

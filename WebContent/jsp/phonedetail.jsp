@@ -6,7 +6,7 @@
     <ul class="product-tab">
         <li class="description"><a href="javascript:void(0);"class="active">Description</a></li>
         <li class="prod-attribute"><a href="javascript:void(0);">Specification</a></li>
-        <li class="reviews"><a href="javascript:void(0);">Reviews <em>(0)</em></a></li>
+        <li class="reviews"><a href="javascript:void(0);">Reviews (<s:property value="%{phoneReviews.size}"/>)</a></li>
 
     </ul>
 
@@ -234,6 +234,7 @@
             var $form = jQuery(this);
             var n = $form.serializeArray();
             url = $form.attr('action');
+           
             jQuery.post(url, {'id': n[0].value, 'name': n[1].value, 'comments': n[2].value}, function(data, status) {
                 var content = '<div id="review"> ' + '<div class="content">' + data.comments + '</div> </div>';
                 jQuery('#reviews').prepend(content);

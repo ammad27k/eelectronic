@@ -28,6 +28,7 @@ public abstract class BaseAction extends ActionSupport implements Preparable,Ser
 	
 	public void prepareCategories(String catId) throws Exception {
 		List<MobileBrands> list = MobileService.getAllMobileBrands(catId);
+
 		for(MobileBrands brands : list){
 			HelperService.setStringWithFirstLetterUpperCase(brands);
 			brandList.add(brands);

@@ -334,13 +334,12 @@ public class MobileService {
 		
 	}
 	
-	public static void persistObject(MobilePhoneReviews object) throws Exception{
+	public static void persistReviews(MobilePhoneReviews object) throws Exception{
 		PersistenceDao persistenceDao = DAOFactory.getInstance().getPersistenceDao();
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-	//	session.beginTransaction();
+		session.beginTransaction();
 		persistenceDao.persistReviews(object, session);
 		session.getTransaction().commit();
-		
 		
 	}
 	

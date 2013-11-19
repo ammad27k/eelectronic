@@ -1,15 +1,11 @@
 package com.imc.framework.interceptors;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.StaleObjectStateException;
 
-
-import com.imc.framework.action.HomeAction;
-import com.imc.framework.common.BaseAction;
 import com.imc.utils.HibernateUtil;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
@@ -41,9 +37,8 @@ public class HibernateSessionRequestFilter implements Interceptor {
 	public String intercept(ActionInvocation action) throws Exception {
 		String result;
 		try {
-            log.debug("Starting a database transaction");
+				log.debug("Starting a database transaction");
             
-            	
            
             	sf.getCurrentSession().beginTransaction();
             	

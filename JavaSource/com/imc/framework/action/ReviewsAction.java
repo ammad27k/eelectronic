@@ -12,7 +12,6 @@ public class ReviewsAction extends BaseAction {
 	 * 
 	 */
 	private static final long serialVersionUID = -7094066676316497645L;
-
 	private String name;
 	private long id;
 	private String comments;
@@ -23,7 +22,6 @@ public class ReviewsAction extends BaseAction {
 	}
 	public String addReviews(){
 		try{
-			prepareCategories((catId == null || catId.equals("")) ? "1" : catId);
 			
 			MobilePhoneReviews reviews = new MobilePhoneReviews();
 			MobilePhones phone = new MobilePhones();
@@ -32,9 +30,9 @@ public class ReviewsAction extends BaseAction {
 			reviews.setName(name);
 			reviews.setReviewsDesc(comments);
 			
-			MobileService.persistObject( reviews);
+			MobileService.persistReviews( reviews);
 		}catch(Exception e){
-			
+			System.out.println("#Some error occured while adding reviews#"+e);
 		}
 		return SUCCESS;
 	}
