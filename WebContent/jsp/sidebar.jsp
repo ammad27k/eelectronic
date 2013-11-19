@@ -9,7 +9,7 @@
                 <s:if test="#session.sidebarMenu != null">
                     <s:iterator value="#session.sidebarMenu" var="brands">
                         <li>
-                            <a href="${pageContext.request.contextPath}/phones/<s:property value="#brands.slug"/><s:property value="#brands.id"/>"><s:property value="#brands.title" /> <span class='dropdown'>+</span></a>
+                            <a href="${pageContext.request.contextPath}/phones/<s:property value="#brands.slug"/><s:property value="#brands.id"/>-<s:property value="#brands.categories.id"/>"><s:property value="#brands.title" /> <span class='dropdown'>+</span></a>
                         </li>
                     </s:iterator>
                 </s:if>

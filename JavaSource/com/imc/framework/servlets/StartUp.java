@@ -30,7 +30,7 @@ public class StartUp extends GenericServlet implements Servlet {
 	@Override
 	public void init() throws ServletException {
 		Constants.BASE_PATH = "";
-		Constants.CONTEXT_PATH = this.getInitParameter("contextPath");
+		Constants.CONTEXT_PATH = this.getServletContext().getContextPath();
 		System.out.println(Constants.CONTEXT_PATH);
 	}
 

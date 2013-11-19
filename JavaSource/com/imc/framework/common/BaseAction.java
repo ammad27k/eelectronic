@@ -30,7 +30,6 @@ public abstract class BaseAction extends ActionSupport implements Preparable,Ser
 		List<MobileBrands> list = MobileService.getAllMobileBrands(catId);
 		for(MobileBrands brands : list){
 			HelperService.setStringWithFirstLetterUpperCase(brands);
-                        System.out.println(brands.getCategories().getId());
 			brandList.add(brands);
 		}
 		this.sessionMap.put("sidebarMenu", brandList);

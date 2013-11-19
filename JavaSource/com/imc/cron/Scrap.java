@@ -24,7 +24,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
-
 import com.imc.framework.bean.MobileAlertTypes;
 import com.imc.framework.bean.MobileBluetooth;
 import com.imc.framework.bean.MobileBrands;
@@ -147,6 +146,7 @@ public class Scrap {
 				 mobileBrands.setIsActive('Y');
 				 mobileBrands.setIsDeleted('N');
 			 }
+			 
 			 MobileService.persistObject("MobileBrands", mobileBrands);
 		 }
 		}catch(Exception e){
@@ -155,18 +155,18 @@ public class Scrap {
 		 		 
 	 }
 	
-	 public void downloadPhoneImage() throws Exception{
+	 public void downloadPhoneImage(String requestUrl) throws Exception{
 		 try{
 		 Elements elements = pageSoup.getElementById("specs-cp-pic").children();
 		 String imageUrl = elements.iterator().next().getElementsByTag("img").attr("src");
-		 saveImages(new URL(imageUrl),imageUrl);
+		 saveImages(new URL(imageUrl),imageUrl,requestUrl);
 		 }catch(Exception e){
 			 System.out.println("download images");
 		 }
 		 
 	 }
 	 
-	 public int saveImages(URL url,String imageUrl) throws Exception{
+	 public int saveImages(URL url,String imageUrl,String requestUrl) throws Exception{
 		 try{
 			 File file  = new File(Constants.CONTEXT_PATH + "images" + File.separator + brand);
 			 if(!file.exists()){
@@ -177,8 +177,8 @@ public class Scrap {
 			 String photoUrl = File.separator + brand + File.separator + imageUrl;
 			 phones.setPhotoUrl(photoUrl);
 			
-			 System.out.println("Absolute path  :" + file.getAbsolutePath());
-			 File image  = new File(Constants.CONTEXT_PATH + "images" + File.separator + brand + File.separator + imageUrl); if (image.exists()) return 0;
+			 
+			 File image  = new File(requestUrl + File.separator + "images" + File.separator + brand + File.separator + imageUrl); if (image.exists()) return 0;
 			 InputStream inputStream = url.openStream();
 			 OutputStream outputStream = new FileOutputStream(image);
 			 

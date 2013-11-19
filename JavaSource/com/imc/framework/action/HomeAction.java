@@ -26,11 +26,9 @@ public class HomeAction extends BaseAction {
 	private int noOfPages;
 	private int start;
 	private int end;
-        private String catId;
+    private String catId;
 
      
-	
-	
 
 	public String welcomeHome() throws Exception{
                 
@@ -47,17 +45,18 @@ public class HomeAction extends BaseAction {
 		else{
 			limit = Integer.valueOf(strlimit);
 		}
-		List<MobilePhones> mobilePhones = MobileService.getAllMobilePhonesByBrands(null, new Long(split[split.length-1]),limit);
+		List<MobilePhones> mobilePhones = MobileService.getAllMobilePhonesByBrands(null, new Long(split[split.length-2]),limit);
 	
 		setMobilePhones(mobilePhones);
 		setBrand(split[0].toUpperCase());
 		
 		if(strlimit == null){
-			BigInteger count = MobileService.getMobilePhonesCount(null, new Long(split[split.length-1]), 0);
+			BigInteger count = MobileService.getMobilePhonesCount(null, new Long(split[split.length-2]), 0);
 			setNoOfPages(count.intValue());
 		}
 		
 	}
+	
 	
 	public void getPhonesByBrandIdPagination(String fancyUrl,String strlimit,int start, int end) throws Exception{
 		String[] split = fancyUrl.split("-");
@@ -68,7 +67,7 @@ public class HomeAction extends BaseAction {
 		else{
 			limit = Integer.valueOf(strlimit);
 		}
-		List<MobilePhones> mobilePhones = MobileService.getAllMobilePhonesByBrandsForPagination(null, new Long(split[split.length-1]),limit, start, end);
+		List<MobilePhones> mobilePhones = MobileService.getAllMobilePhonesByBrandsForPagination(null, new Long(split[split.length-2]),limit, start, end);
 		setMobilePhones(mobilePhones);
 		setBrand(split[0].toUpperCase());
 		
